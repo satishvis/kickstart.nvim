@@ -3,13 +3,12 @@
 --
 -- See the kickstart.nvim README for more information
 return {
-  { 'ellisonleao/glow.nvim', config = function() end, cmd = 'Glow' },
+  { 'ellisonleao/glow.nvim', opts = {}, cmd = 'Glow' },
   { 'dstein64/vim-startuptime', lazy = false },
   { 'chentoast/marks.nvim', config = function() end },
   { 'jacquesbh/vim-showmarks', config = function() end, cmd = 'DoShowMarks', lazy = false },
   { 'ggandor/lightspeed.nvim', config = function() end },
   { 'notjedi/nvim-rooter.lua', config = function() end, lazy = false },
-  { 'vimwiki/vimwiki', config = function() end, lazy = true },
   { 'ledger/vim-ledger', config = function() end, lazy = true },
   { 'mattn/vim-gist', config = function() end, cmd = 'Gist', dependencies = { 'mattn/webapi-vim' } },
   { 'wakatime/vim-wakatime', lazy = false },
