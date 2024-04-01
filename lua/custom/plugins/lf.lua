@@ -9,6 +9,6 @@ return {
     require('lf').setup {}
   end,
   keys = { -- load the plugin only when using it's keybinding:
-    { '<leader><leader>', '<cmd>Lf<cr>', desc = 'Open Lf file manager' },
+    { '<leader><leader>', '<cmd>LF<cr>', desc = 'Open Lf file manager' },
   },
 }

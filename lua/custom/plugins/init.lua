@@ -18,6 +18,8 @@ return {
   { 'mattn/vim-gist', opts = {}, cmd = 'Gist', dependencies = { 'mattn/webapi-vim' } },
   { 'wakatime/vim-wakatime', lazy = false },
   { 'averms/black-nvim', lazy = false, ft = 'python' },
+  { 'jremmen/vim-ripgrep', lazy = false },
+  { 'folke/trouble.nvim', dependencies = { 'nvim-tree/nvim-web-devicons' }, opts = {} },
   {
     'kylechui/nvim-surround',
     version = '*', -- Use for stability; omit to use `main` branch for the latest features
