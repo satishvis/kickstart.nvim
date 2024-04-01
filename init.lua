@@ -73,7 +73,9 @@ Kickstart Guide:
     These are hints about where to find more information about the relevant settings,
     plugins or Neovim features used in Kickstart.
 
-   NOTE: Look for lines like this
+--          ╭─────────────────────────────────────────────────────────╮
+--          │             NOTE: Look for lines like this              │
+--          ╰─────────────────────────────────────────────────────────╯
 
     Throughout the file. These are for you, the reader, to help you understand what is happening.
     Feel free to delete them once you know what you're doing, but they should serve as a guide
@@ -89,7 +91,10 @@ P.S. You can delete this when you're done too. It's your config now! :)
 
 -- Set <space> as the leader key
 -- See `:help mapleader`
---  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
+--          ╭─────────────────────────────────────────────────────────╮
+--          │ NOTE: Must happen before plugins are loaded (otherwise  │
+--          │               wrong leader will be used)                │
+--          ╰─────────────────────────────────────────────────────────╯
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
@@ -98,8 +103,10 @@ vim.g.have_nerd_font = true
 
 -- [[ Setting options ]]
 -- See `:help vim.opt`
--- NOTE: You can change these options as you wish!
---  For more options, you can see `:help option-list`
+--          ╭─────────────────────────────────────────────────────────╮
+--          │   NOTE: You can change these options as you wish! For   │
+--          │      more options, you can see `:help option-list`      │
+--          ╰─────────────────────────────────────────────────────────╯
 
 -- Make line numbers default
 vim.opt.number = true
@@ -174,8 +181,11 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
 --
--- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
--- or just use <C-\><C-n> to exit terminal mode
+--          ╭─────────────────────────────────────────────────────────╮
+--          │  NOTE: This won't work in all terminal emulators        │
+--          │           /tmux/etc. Try your own mapping or just use   │
+--          │            <C-\><C-n> to exit terminal mode             │
+--          ╰─────────────────────────────────────────────────────────╯
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 -- TIP: Disable arrow keys in normal mode
@@ -193,7 +203,9 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
--- [[ Basic Keymaps ]]
+--          ╭─────────────────────────────────────────────────────────╮
+--          │              NOTE: Import Basic Keymaps                 │
+--          ╰─────────────────────────────────────────────────────────╯
 require 'keymaps'
 
 -- Restore cursor position
@@ -238,14 +250,21 @@ vim.opt.rtp:prepend(lazypath)
 --  To update plugins you can run
 --    :Lazy update
 --
--- NOTE: Here is where you install your plugins.
+--          ╭─────────────────────────────────────────────────────────╮
+--          │      NOTE: Here is where you install your plugins.      │
+--          ╰─────────────────────────────────────────────────────────╯
 require('lazy').setup({
-  -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
+  --          ╭─────────────────────────────────────────────────────────╮
+  --          │    NOTE: Plugins can be added with a link (or for a     │
+  --          │            github repo: 'owner/repo' link).             │
+  --          ╰─────────────────────────────────────────────────────────╯
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
-  -- NOTE: Plugins can also be added by using a table,
-  -- with the first argument being the link and the following
-  -- keys can be used to configure plugin behavior/loading/etc.
+  --         ╭──────────────────────────────────────────────────────────╮
+  --         │    NOTE: Plugins can also be added by using a table,     │
+  --         │ with the first argument being the link and the following │
+  --         │keys can be used to configure plugin behavior/loading/etc.│
+  --         ╰──────────────────────────────────────────────────────────╯
   --
   -- Use `opts = {}` to force a plugin to be loaded.
   --
@@ -273,7 +292,10 @@ require('lazy').setup({
     },
   },
 
-  -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
+  --          ╭─────────────────────────────────────────────────────────╮
+  --          │  NOTE: Plugins can also be configured to run Lua code   │
+  --          │                  when they are loaded.                  │
+  --          ╰─────────────────────────────────────────────────────────╯
   --
   -- This is often very useful to both group configuration, as well as handle
   -- lazy loading plugins that don't need to be loaded immediately at startup.
@@ -305,7 +327,9 @@ require('lazy').setup({
     end,
   },
 
-  -- NOTE: Plugins can specify dependencies.
+  --          ╭─────────────────────────────────────────────────────────╮
+  --          │         NOTE: Plugins can specify dependencies.         │
+  --          ╰─────────────────────────────────────────────────────────╯
   --
   -- The dependencies are proper plugin specifications as well - anything
   -- you do for a plugin at the top level, you can do for a dependency.
@@ -427,7 +451,10 @@ require('lazy').setup({
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
       -- Useful status updates for LSP.
-      -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
+      --          ╭─────────────────────────────────────────────────────────╮
+      --          │        NOTE: `opts = {}` is the same as calling         │
+      --          │              `require('fidget').setup({})`              │
+      --          ╰─────────────────────────────────────────────────────────╯
       { 'j-hui/fidget.nvim', opts = {} },
 
       -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
@@ -467,8 +494,12 @@ require('lazy').setup({
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
         callback = function(event)
-          -- NOTE: Remember that Lua is a real programming language, and as such it is possible
-          -- to define small helper and utility functions so you don't have to repeat yourself.
+          --          ╭─────────────────────────────────────────────────────────╮
+          --          │      NOTE: Remember that Lua is a real programming      │
+          --          │          language, and as such it is possible           │
+          --          │   to define small helper and utility functions so you   │
+          --          │             don't have to repeat yourself.              │
+          --          ╰─────────────────────────────────────────────────────────╯
           --
           -- In this case, we create a function that lets us more easily define mappings specific
           -- for LSP related items. It sets the mode, buffer and description for us each time.
@@ -513,8 +544,10 @@ require('lazy').setup({
           --  See `:help K` for why this keymap.
           map('K', vim.lsp.buf.hover, 'Hover Documentation')
 
-          -- WARN: This is not Goto Definition, this is Goto Declaration.
-          --  For example, in C this would take you to the header.
+          --       ╭──────────────────────────────────────────────────────────────╮
+          --       │ WARN: This is not Goto Definition, this is Goto Declaration. │
+          --       │     For example, in C this would take you to the header.     │
+          --       ╰──────────────────────────────────────────────────────────────╯
           map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
           -- The following two autocommands are used to highlight references of the
