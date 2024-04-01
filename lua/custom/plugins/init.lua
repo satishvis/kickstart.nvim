@@ -5,23 +5,29 @@
 return {
   { 'ellisonleao/glow.nvim', opts = {}, cmd = 'Glow' },
   { 'dstein64/vim-startuptime', lazy = false },
-  { 'chentoast/marks.nvim', config = function() end },
-  { 'jacquesbh/vim-showmarks', config = function() end, cmd = 'DoShowMarks', lazy = false },
-  { 'ggandor/lightspeed.nvim', config = function() end },
-  { 'notjedi/nvim-rooter.lua', config = function() end, lazy = false },
-  { 'ledger/vim-ledger', config = function() end, lazy = true },
-  { 'mattn/vim-gist', config = function() end, cmd = 'Gist', dependencies = { 'mattn/webapi-vim' } },
+  { 'chentoast/marks.nvim', opts = {} },
+  {
+    'jacquesbh/vim-showmarks',
+    config = function() end,
+    cmd = 'DoShowMarks',
+    lazy = false,
+  },
+  { 'ggandor/lightspeed.nvim', opts = {} },
+  { 'notjedi/nvim-rooter.lua', opts = {}, lazy = false },
+  { 'ledger/vim-ledger', opts = {}, lazy = true },
+  { 'mattn/vim-gist', opts = {}, cmd = 'Gist', dependencies = { 'mattn/webapi-vim' } },
   { 'wakatime/vim-wakatime', lazy = false },
   { 'averms/black-nvim', lazy = false, ft = 'python' },
   {
     'kylechui/nvim-surround',
     version = '*', -- Use for stability; omit to use `main` branch for the latest features
     event = 'VeryLazy',
-    config = function()
-      require('nvim-surround').setup {
-        -- Configuration here, or leave empty to use defaults
-      }
-    end,
+    opts = {},
+    -- config = function()
+    --   require('nvim-surround').setup {
+    --     -- Configuration here, or leave empty to use defaults
+    --   }
+    -- end,
   },
 
   {
@@ -53,5 +59,40 @@ return {
         return vim.fn['codeium#Clear']()
       end, { expr = true })
     end,
+  },
+  {
+    'epwalsh/obsidian.nvim',
+    version = '*', -- recommended, use latest release instead of latest commit
+    lazy = true,
+    ft = 'markdown',
+    -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
+    event = {
+      -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
+      -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/**.md"
+      'BufReadPre '
+        .. vim.fn.expand '~'
+        .. '/vaults/**.md',
+      'BufNewFile ' .. vim.fn.expand '~' .. '/vaults/**.md',
+    },
+    dependencies = {
+      -- Required.
+      'nvim-lua/plenary.nvim',
+
+      -- see below for full list of optional dependencies 👇
+    },
+    opts = {
+      workspaces = {
+        {
+          name = 'personal',
+          path = '~/vaults/personal',
+        },
+        {
+          name = 'work',
+          path = '~/vaults/work',
+        },
+      },
+
+      -- see below for full list of options 👇
+    },
   },
 }
