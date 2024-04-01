@@ -43,7 +43,10 @@ What is Kickstart?
 
 Kickstart Guide:
 
-  TODO: The very first thing you should do is to run the command `:Tutor` in Neovim.
+--          ╭─────────────────────────────────────────────────────────╮
+--          │ TODO: The very first thing you should do is to run the  │
+--          │               command `:Tutor` in Neovim.               │
+--          ╰─────────────────────────────────────────────────────────╯
 
     If you don't know what this means, type the following:
       - <escape key>
@@ -190,11 +193,8 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
--- My shortcuts
-vim.keymap.set('n', ';', ':', { desc = 'Enter command mode' })
-vim.keymap.set('n', ',w', '<cmd>update<CR>', { desc = 'Save' })
-vim.keymap.set('i', 'jk', '<ESC>', { desc = 'Exit Insert mode' })
-vim.keymap.set('n', '<leader>u', '<cmd>lua require("undotree").toggle()<CR>', { desc = 'Undotree Toggle' })
+-- [[ Basic Keymaps ]]
+require 'keymaps'
 
 -- Restore cursor position
 -- Adapted from https://stackoverflow.com/a/72939989/10585637
@@ -390,7 +390,8 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
-      vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+      -- Changed this ---
+      vim.keymap.set('n', '<leader>b', builtin.buffers, { desc = '[ ] Find existing buffers' })
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>/', function()
@@ -847,15 +848,17 @@ require('lazy').setup({
   require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
 
-  -- My plugins
-  { 'jiaoshijie/undotree', opts = {} },
-
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
   --
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
-  -- { import = 'custom.plugins' },
+  { import = 'custom.plugins' },
+
+  --          ╭─────────────────────────────────────────────────────────╮
+  --          │   This is where the custom plugins will load from the   │
+  --          │              lua/custom/plugins directory               │
+  --          ╰─────────────────────────────────────────────────────────╯
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
