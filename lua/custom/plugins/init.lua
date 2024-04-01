@@ -91,7 +91,11 @@ return {
           path = '~/vaults/work',
         },
       },
-
+      templates = {
+        subdir = '../templates',
+        date_format = '%Y-%m-%d-%a',
+        time_format = '%H:%M',
+      },
       -- see below for full list of options 👇
     },
   },
