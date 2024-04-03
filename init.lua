@@ -168,6 +168,8 @@ vim.opt.conceallevel = 2
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
