@@ -6,12 +6,6 @@ return {
   { 'ellisonleao/glow.nvim', opts = {}, cmd = 'Glow' },
   { 'dstein64/vim-startuptime', lazy = false },
   { 'chentoast/marks.nvim', opts = {} },
-  {
-    'jacquesbh/vim-showmarks',
-    config = function() end,
-    cmd = 'DoShowMarks',
-    lazy = false,
-  },
   { 'ggandor/lightspeed.nvim', opts = {} },
   { 'notjedi/nvim-rooter.lua', opts = {}, lazy = false },
   { 'ledger/vim-ledger', opts = {}, lazy = true },
@@ -20,6 +14,42 @@ return {
   { 'averms/black-nvim', lazy = false, ft = 'python' },
   { 'jremmen/vim-ripgrep', lazy = false },
   { 'folke/trouble.nvim', dependencies = { 'nvim-tree/nvim-web-devicons' }, opts = {} },
+  -- {
+  --   'kevinhwang91/nvim-ufo',
+  --   dependencies = { 'kevinhwang91/promise-async' },
+  -- },
+  -- lazy = false,
+  -- opts = {
+  --   open_fold_hl_timeout = 150,
+  --   close_fold_kinds_for_ft = {
+  --     default = { 'imports', 'comment' },
+  --     json = { 'array' },
+  --     c = { 'comment', 'region' },
+  --   },
+  --   preview = {
+  --     win_config = {
+  --       border = { '', '─', '', '', '', '─', '', '' },
+  --       winhighlight = 'Normal:Folded',
+  --       winblend = 0,
+  --     },
+  --     mappings = {
+  --       scrollU = '<C-u>',
+  --       scrollD = '<C-d>',
+  --       jumpTop = '[',
+  --       jumpBot = ']',
+  --     },
+  --   },
+  --   provider_selector = function(bufnr, filetype, buftype)
+  --     return { 'treesitter', 'indent' }
+  --   end,
+  -- },
+  -- },
+  {
+    'jacquesbh/vim-showmarks',
+    config = function() end,
+    cmd = 'DoShowMarks',
+    lazy = false,
+  },
   {
     'kylechui/nvim-surround',
     version = '*', -- Use for stability; omit to use `main` branch for the latest features
@@ -48,7 +78,6 @@ return {
       { '<leader>gy', '<cmd>Yazi<CR>', desc = 'Toggle Yazi' },
     },
   },
-
   {
     'Exafunction/codeium.vim',
     config = function()
