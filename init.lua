@@ -623,6 +623,11 @@ require('lazy').setup({
         -- clangd = {},
         gopls = {},
         pyright = {},
+        htmx = {},
+        eslint = {},
+        grammarly = {},
+        marksman = {},
+        bashls = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -630,7 +635,7 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
-        -- tsserver = {},
+        tsserver = {},
         --
 
         lua_ls = {
@@ -662,6 +667,17 @@ require('lazy').setup({
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
+        'html-lsp', -- Used to format HTML code
+        'prettier', -- Used to format code
+        'gofumpt', -- Used to format Go code
+        'black', -- Used to format Python code
+        'shellcheck', -- Used to format shell scripts
+        'eslint', -- Used to format JavaScript code
+        'marksman', -- Used to format Markdown code
+        'grammarly-languageserver', -- Used to format Markdown code
+        'taplo', -- Used to format TOML code
+        'yaml-language-server', -- Used to format YAML code
+        'jq-lsp', -- Used to format JSON code
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
