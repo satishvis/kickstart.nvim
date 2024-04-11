@@ -2,6 +2,10 @@
 --  I promise not to create any merge conflicts in this directory :)
 --
 -- See the kickstart.nvim README for more information
+--
+--          ╭─────────────────────────────────────────────────────────╮
+--          │      This is the place I am getting all my plugins      │
+--          ╰─────────────────────────────────────────────────────────╯
 return {
   { 'ellisonleao/glow.nvim', opts = {}, cmd = 'Glow' },
   { 'dstein64/vim-startuptime', lazy = false },
