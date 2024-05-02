@@ -7,7 +7,7 @@ return {
   {
     'kevinhwang91/nvim-ufo',
     dependencies = 'kevinhwang91/promise-async',
-    event = 'VimEnter', -- needed for folds to load in time and comments closed
+    -- event = 'VimEnter', -- needed for folds to load in time and comments closed
     keys = {
 			-- stylua: ignore start
 			{ "zm", function() require("ufo").closeAllFolds() end, desc = "󱃄 Close All Folds" },
@@ -33,7 +33,7 @@ return {
         -- INFO some filetypes only allow indent, some only LSP, some only
         -- treesitter. However, ufo only accepts two kinds as priority,
         -- therefore making this function necessary :/
-        local lspWithOutFolding = { 'markdown', 'sh', 'css', 'html', 'python' }
+        local lspWithOutFolding = { 'markdown', 'sh', 'css', 'html', 'python', "go" }
         if vim.tbl_contains(lspWithOutFolding, ft) then
           return { 'treesitter', 'indent' }
         end

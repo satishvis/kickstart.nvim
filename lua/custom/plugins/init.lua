@@ -18,6 +18,7 @@ return {
   { 'averms/black-nvim', lazy = false, ft = 'python' },
   { 'jremmen/vim-ripgrep', lazy = false },
   { 'folke/trouble.nvim', dependencies = { 'nvim-tree/nvim-web-devicons' }, opts = {} },
+  { 'olexsmir/gopher.nvim', ft="go", opts = {} },
   -- {
   --   'kevinhwang91/nvim-ufo',
   --   dependencies = { 'kevinhwang91/promise-async' },
