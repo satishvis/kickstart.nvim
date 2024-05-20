@@ -179,6 +179,11 @@ vim.opt.tabstop = 4
 vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- vim.g.user_emmet_leader_key = '<C-Z>'
+--          ╭─────────────────────────────────────────────────────────╮
+--          │            Basic movement in relative lines             │
+--          ╰─────────────────────────────────────────────────────────╯
+vim.keymap.set('n', 'k', 'gk', { silent = true })
+vim.keymap.set('n', 'j', 'gj', { silent = true })
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
@@ -212,6 +217,11 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+--          ╭─────────────────────────────────────────────────────────╮
+--          │    Gist show private gists with the :Gist -l command    │
+--          ╰─────────────────────────────────────────────────────────╯
+vim.g.gist_show_privates = 1
+vim.g.gist_post_private = 1
 --          ╭─────────────────────────────────────────────────────────╮
 --          │              NOTE: Import Basic Keymaps                 │
 --          ╰─────────────────────────────────────────────────────────╯
