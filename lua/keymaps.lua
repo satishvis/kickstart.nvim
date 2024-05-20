@@ -7,3 +7,4 @@ vim.keymap.set('n', '<leader>cd', '<cmd>lcd %:p:h<cr>:pwd<cr>', { desc = 'Change
 vim.keymap.set('n', '<leader>cb', '<cmd>lua require("comment-box").ccbox()<CR>', { desc = 'Comment Box Centered' })
 vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<CR>', { desc = 'Find File' })
 vim.keymap.set('n', '<leader>fr', '<cmd>Telescope oldfiles<CR>', { desc = 'Find Recent File' })
+vim.keymap.set('n', '<leader>tt', ':sp<bar>term<cr><c-w>J:resize10<cr>', { desc = 'Split terminal botton' })
