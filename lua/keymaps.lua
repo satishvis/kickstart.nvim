@@ -8,3 +8,5 @@ vim.keymap.set('n', '<leader>cb', '<cmd>lua require("comment-box").ccbox()<CR>',
 vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<CR>', { desc = 'Find File' })
 vim.keymap.set('n', '<leader>fr', '<cmd>Telescope oldfiles<CR>', { desc = 'Find Recent File' })
 vim.keymap.set('n', '<leader>ts', ':sp<bar>term<cr><c-w>J:resize10<cr>', { desc = 'Small Terminal at bottom split' })
+vim.keymap.set('n', 'j', 'gj', { desc = 'Relative down j' })
+vim.keymap.set('n', 'k', 'gk', { desc = 'Relative up k' })
